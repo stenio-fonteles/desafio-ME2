@@ -2,16 +2,20 @@ import Button from "../../components/Button/index";
 import Input from "../../components/Form/Input";
 import { useEffect,useState } from "react";
 import axios from "axios";
+import { Div,Container } from './styled'
+import { useNavigate } from "react-router-dom";
 
 type TDataUser = {
+    name: string,
     email: string
     password: string
 }
 export default function Cadastro() {
-    let [users, setUsers] = useState([])
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('')
+
+    let navigate = useNavigate();
 
     const [dataUser, setDataUser] = useState<TDataUser[]>([])
 
@@ -23,14 +27,19 @@ export default function Cadastro() {
     }
 
     useEffect(() => console.log(dataUser), [dataUser])
-
+    function handleNavegate () {
+        navigate("/login")
+    }
     return(
-        <>
-            <Input value={'Nome:'} set={setName}/>
-            <Input value={'Email:'} set={setEmail}/>
-            <Input value={'Senha:'} set={setPassword}/>
-            <Button value={'login'}  to={'/login'}/>
-            <Button value={'Cadastrar'} click={handleSubmit} />
-        </>
+        <Div>
+            <Container>
+                <h1>Cadastro</h1>
+                <Input value={'Nome:'} set={setName}/>
+                <Input value={'Email:'} set={setEmail}/>
+                <Input value={'Senha:'} set={setPassword}/>
+                <Button value={'login'} click={handleNavegate} />
+                <Button value={'Cadastrar'} click={handleSubmit} />
+            </Container>
+        </Div>
     )
 }

@@ -1,14 +1,12 @@
-import Button from '@mui/material/Button';
-
+import { Button } from   './styled'
 type TProps={
     value: string,
-    click():void,
-    to: any
+    click:any
 }
-export default function ButtonForm({value,click, to}:TProps) {
+export default function ButtonForm({value,click}:TProps) {
     return(
         <>
-            <Button variant="contained" onClick={click} to={to} > {value} </Button>
+            <Button onClick={click} > {value} </Button>
         </>
     )
 }
