@@ -7,8 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 10px;
   }
-`
+  `
 export const Template = styled.div `
+    overflow-y:scroll ;
     display: flex;
     flex-direction: row;
     width: auto;
@@ -16,11 +17,14 @@ export const Template = styled.div `
     justify-content: center;
     margin-top: 10%;
     padding-top: 10px;
-    overflow-x: scroll;
-    overflow-y: scroll;
+    flex-wrap: nowrap;
+    transform: translateX(0%);
+    transition: all 500ms ease;
+    width: 100%;
     `
 export const Foto = styled.img `
     cursor: pointer;
     height: auto;
     max-width: 20%;
+
    `
