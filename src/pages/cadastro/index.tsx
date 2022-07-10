@@ -22,8 +22,8 @@ export default function Cadastro() {
     
     async function handleSubmit ()
     {
-        setDataUser(oldState => [...oldState, {name, email, password}]);
-        await axios.post('/api/users', dataUser )
+        if(name == '' ) return;
+        await axios.post('/api/users', {name, email, password} )
     }
 
     useEffect(() => console.log(dataUser), [dataUser])

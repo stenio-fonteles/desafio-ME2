@@ -9,22 +9,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   `
 export const Template = styled.div `
-    overflow-y:scroll ;
     display: flex;
     flex-direction: row;
-    width: auto;
     gap:5%;
     justify-content: center;
     margin-top: 10%;
     padding-top: 10px;
-    flex-wrap: nowrap;
-    transform: translateX(0%);
     transition: all 500ms ease;
-    width: 100%;
-    `
-export const Foto = styled.img `
-    cursor: pointer;
-    height: auto;
-    max-width: 20%;
-
-   `
+    height: 100%;
+    overflow: scroll;
+  `

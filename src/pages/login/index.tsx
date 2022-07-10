@@ -20,15 +20,15 @@ export default function Login () {
     async function handleSubmit(_event: FormEvent) {
   
       const response = await doLogin({
-        email: "stenio",
-        password: "sousa"
+        email,
+        password
       });
   
       if(!response) return console.log("not authorized")
   
       return navigator("/Home")
     }
-  
+ 
 
     function handleNavegate(){
         navigator("/cadastro");
@@ -39,8 +39,8 @@ export default function Login () {
             <Div>
                 <Container>
                     <h1>Login</h1>
-                    <Input value={"Email:"} set={setEmail}/>
-                    <Input value={"Senha"} set={setPassword} />
+                    <Input value={"Nome::"} set={setEmail}/>
+                    <Input value={"Senha:"} set={setPassword} />
 
                 </Container>
                 <Container>

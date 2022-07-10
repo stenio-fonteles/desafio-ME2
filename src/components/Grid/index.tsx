@@ -1,34 +1,40 @@
-import { Template, GlobalStyle,Foto} from './styled'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
+import Card from '../Card'
+import { Template, GlobalStyle} from './styled'
+
+type TData = {
+    url: string,
+    nome: string,
+    potencia: number,
+    valor: number,
+    id: number
+}
 
 export default function Grid () {
-    const images = ["https://i.pinimg.com/originals/8c/5a/50/8c5a504e2267a79edf8d33f24ac7d3e8.jpg"
-    ,   'https://pbs.twimg.com/media/E2VCEHFXMAMHUpO.jpg:large',
-    'https://cdn.awsli.com.br/800x800/480/480360/produto/72248860/3cce188072.jpg',"https://i.pinimg.com/originals/8c/5a/50/8c5a504e2267a79edf8d33f24ac7d3e8.jpg"
-    ,   'https://pbs.twimg.com/media/E2VCEHFXMAMHUpO.jpg:large',
-    'https://cdn.awsli.com.br/800x800/480/480360/produto/72248860/3cce188072.jpg',"https://i.pinimg.com/originals/8c/5a/50/8c5a504e2267a79edf8d33f24ac7d3e8.jpg"
-    ,   'https://pbs.twimg.com/media/E2VCEHFXMAMHUpO.jpg:large',
-    'https://cdn.awsli.com.br/800x800/480/480360/produto/72248860/3cce188072.jpg',"https://i.pinimg.com/originals/8c/5a/50/8c5a504e2267a79edf8d33f24ac7d3e8.jpg"
-    ,   'https://pbs.twimg.com/media/E2VCEHFXMAMHUpO.jpg:large',
-    'https://cdn.awsli.com.br/800x800/480/480360/produto/72248860/3cce188072.jpg'
-    ]
+    const [motorcycle, setMotorcycles] = useState<TData[]>([])
+    
+    async function getMotorcycles() {
+        const {data} = await axios.get("/api/motorcycles");
+        setMotorcycles(data)
+    }
+
+    useEffect(() =>{
+        getMotorcycles()
+    },[])
+
     return (
         <>
-        <GlobalStyle/>
-            <Template>
-                {images.map((e) => {
+        <GlobalStyle />
+            <Template >
+                {motorcycle.map((e) => {
                     return (
-                    <>
-                        <Foto onClick={
-                            (e) =>{
-                                
-                            }
-                        } key={Math.random()} src={e}/>
-                        
-                    </>
-                )
+                            <Card key={e.id} image={e.url} nome={e.nome} potencia={e.potencia} valor={e.valor} id={e.id} />
+                    )
                 })}
-            </Template>
+            </Template> 
         </>
+        
     )
 }
