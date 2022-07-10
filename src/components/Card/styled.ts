@@ -18,6 +18,10 @@ export const Img = styled.img `
     height: 300px;
     cursor: pointer;
     border-radius: 2%;
+    @media (max-width: 728px) {
+      width: 90%;
+      height: auto;
+    }
 
 `
 

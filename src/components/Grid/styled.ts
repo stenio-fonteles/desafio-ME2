@@ -13,9 +13,16 @@ export const Template = styled.div `
     flex-direction: row;
     gap:5%;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 5%;
     padding-top: 10px;
     transition: all 500ms ease;
     height: 100%;
+    width: 100%;
     overflow: scroll;
+    transform: translateX(-0%);
+    @media (max-width: 728px) {
+      height: 100%;
+      height: auto;
+   
+  }
   `
