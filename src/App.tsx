@@ -11,6 +11,7 @@ import Login from "./pages/login";
 import Home from "./pages/Home";
 import { AuthProvider } from "./contexts/AuthContext";
 import Descricao from "./pages/Descricao";
+import { GlobalStyle } from "./styled";
 
 
 
@@ -77,7 +78,9 @@ function App() {
     
   })
   return (
+    
     <AuthProvider>
+      <GlobalStyle/>
       <BrowserRouter>
       <Routes>
         <Route path="/Cadastro" element={<Cadastro />} />

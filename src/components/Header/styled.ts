@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Div = styled.div `
     height: 50px;
    cursor: pointer;
-    background-color:#000080 ;
+    background-color:white ;
     display: flex;
     align-items: center;
     font-family: 'Roboto', sans-serif;
@@ -28,11 +28,20 @@ export const H1 = styled.h1 `
 `
 
 export const Ul = styled.ul `
+    width: 100%;
     display: flex;
     flex-direction: row;
+    text-decoration: none;
+    justify-content: space-around;
     gap: 5%;
+    align-items:center;
     li{
         text-decoration: none;
+        list-style-type: none;
+        img{
+            height: auto;
+            width: 100%;
+        }
     }
 
 `

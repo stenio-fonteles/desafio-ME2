@@ -13,6 +13,8 @@ export const Component = styled.div `
     text-align: center;
 
 `
+
+
 export const Img = styled.img`
     margin-top: 1%;
     height: 60%;
@@ -67,7 +69,14 @@ export const H1 = styled.h1 `
 export const H3 = styled.h3 `
     display: none;
     @media (max-width: 728px) {
+      background-color: white !important;
       display: inline;
     }
 
+`
+
+export const Video = styled.video `
+  height: auto;
+  width: 100%;
+  box-shadow: 50px 50px 50px 50px rgba(0, 0, 0, 0.2);
 `

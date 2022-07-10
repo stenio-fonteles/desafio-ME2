@@ -9,6 +9,21 @@ export const GlobalStyle = createGlobalStyle`
 }
 `
 export const Container = styled.div `
+  @media (max-width: 716px) {
+    transform: translateX(250%);
+    }
+    @media (max-width: 659px) {
+    transform: translateX(270%);
+    }
+    @media (max-width: 531px) {
+    transform: translateX(290%);
+    }
+    @media (max-width: 442px) {
+    transform: translateX(310%);
+    }
+    @media (max-width: 362px) {
+    transform: translateX(330%);
+    }
   
 
 `
@@ -20,7 +35,7 @@ export const Img = styled.img `
     border-radius: 2%;
     @media (max-width: 728px) {
       width: 90%;
-      height: auto;
+      height: 90px;
     }
 
 `

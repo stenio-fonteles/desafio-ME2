@@ -19,13 +19,13 @@ function handleNavigateHome() {
             <H1>{user}</H1>
             <Ul>
                 <li>
-                <ButtonForm value={"Conta"} key={Math.random()*100} click={''}/>
-
+                    <ButtonForm value={"Conta"} key={Math.random()*100} click={''}/>
                 </li>
-
                 <li>
-                <ButtonForm value={"Home"} key={Math.random()*100} click={handleNavigateHome}/>
-                    
+                    <img src={"https://w7.pngwing.com/pngs/189/368/png-transparent-honda-logo-honda-logo-car-motorcycle-honda-cr-v-moto-text-trademark-logo.png"}/>
+                </li>
+                <li>
+                    <ButtonForm value={"Home"} key={Math.random()*100} click={handleNavigateHome}/>
                 </li>
             </Ul>
         </Div>
