@@ -14,7 +14,7 @@ type TDataUser = {
 export default function Card({image, nome, potencia, valor,id }:TDataUser){
     const navigator = useNavigate()
 
-    function teste(){
+    function handleSelectCard(){
         navigator('/descricao/' + id )
     }
 
@@ -25,7 +25,7 @@ export default function Card({image, nome, potencia, valor,id }:TDataUser){
                 <Img src={image}/>
                 <Div>
                     <H3>{nome}</H3>
-                    <Button value={"Detalhes"} key={id} click={teste}/>
+                    <Button value={"Detalhes"} key={id} click={handleSelectCard}/>
                 </Div>
                 <Div>
                     <P>{potencia} cv</P>

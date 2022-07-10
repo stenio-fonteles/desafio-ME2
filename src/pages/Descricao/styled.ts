@@ -87,5 +87,16 @@ export const Ul = styled.ul `
     flex-direction: column;
     }
 `
+export const ButtonBuy = styled.button `
+  cursor: pointer;
+  
+  color: red;
+  font-size: 2.5rem;
+  position: fixed;
+  transform: translate(-50%);
+  left: 50%;
+  bottom: 0%;
+  width: 80%;
+  margin-bottom: 5%;
 
-
+`

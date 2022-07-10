@@ -27,3 +27,12 @@ export const H1 = styled.h1 `
     color: white;
 `
 
+export const Ul = styled.ul `
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    li{
+        text-decoration: none;
+    }
+
+`
