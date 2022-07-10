@@ -15,6 +15,7 @@ type TAuthContext = {
   isAuthenticated: boolean
   userData: TUserData
   doLogin: (data: TDoLoginParams) => Promise<boolean>
+  logout: () => void
 }
 
 export const AuthContext = createContext({} as TAuthContext);
@@ -37,13 +38,15 @@ export const AuthProvider = ({ children }: any) => {
     return true
   }
 
+  function logout() {
+    localStorage.removeItem("auth");
+    setIsAuthenticated(false);
+    setUserData({} as TUserData);
+  }
+
   useEffect(() => {
     const auth = localStorage.getItem("auth")
-    if (!auth) {
-      setIsAuthenticated(false)
-      setUserData({} as TUserData)
-      return
-    }
+    if (!auth) return logout()
 
     const authObject = JSON.parse(auth)
     setIsAuthenticated(true)
@@ -51,7 +54,7 @@ export const AuthProvider = ({ children }: any) => {
   }, [])
 
   return (
-    <AuthContext.Provider value={{doLogin, isAuthenticated, userData}}>
+    <AuthContext.Provider value={{doLogin, isAuthenticated, userData, logout}}>
       {children}
     </AuthContext.Provider>
   )

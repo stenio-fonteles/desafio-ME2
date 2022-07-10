@@ -2,6 +2,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import axios from 'axios';
 
 import { useState } from 'react';
+import { useAuth } from '../../hooks/useAth';
+import Input from '../Form/Input';
 import {Div,Container,Button,Content} from './styled'
 
 type TData = {
@@ -10,7 +12,9 @@ type TData = {
 }
 export default function UserAccount({nome, id}:TData) {
     const[active,setActive] = useState(false)
+    const {isAuthenticated, logout} = useAuth();
 
+    const [newUser, setNewUser] = useState('') 
     function handleShowAccount() {
         setActive(oldState => !oldState)
     }
@@ -21,7 +25,11 @@ export default function UserAccount({nome, id}:TData) {
         console.log("deleted User")
     }
 
-    console.log(nome)
+    function handleDeslogarAccount() {
+        console.log(isAuthenticated)
+        logout()
+    }
+
     return(
         <Container>
                 <AccountCircleIcon onClick={handleShowAccount}/>
@@ -29,7 +37,9 @@ export default function UserAccount({nome, id}:TData) {
                     <Button onClick={handleShowAccount}> X </Button>
                     <Content>
                         <h1>{nome}</h1>
-                        <button onClick={handleDeleteAccount}> Excluir conta</button>
+                        <button onClick={handleDeleteAccount}> Editar</button>
+                        <button onClick={handleDeslogarAccount}> Deslogar</button>
+                        <Input value='name'  set={setNewUser}/>
                     </Content>
                 </Div>
 

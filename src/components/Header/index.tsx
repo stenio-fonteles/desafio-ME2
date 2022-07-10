@@ -12,7 +12,6 @@ export default function Header({user}:TData) {
     const {userData} = useAuth()
 
 function handleNavigateHome() {
-    console.log("comprei")
     navigator('/home')
 }
 

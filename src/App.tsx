@@ -1,22 +1,10 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 import { createServer, Model } from "miragejs"
 
-//            ROTAS
-import Cadastro from "./pages/cadastro/index";
-import Login from "./pages/login";
-import Home from "./pages/Home";
-import { AuthProvider } from "./contexts/AuthContext";
-import Descricao from "./pages/Descricao";
 import { GlobalStyle } from "./styled";
-import { useAuth } from "./hooks/useAth";
-
+import { Routes } from "./Routes";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
-  const { isAuthenticated } = useAuth()
   createServer({
     models: {
       users: Model
@@ -85,29 +73,13 @@ function App() {
     },
     
   })
+
   return (
     <>
-        <GlobalStyle/>
-        <BrowserRouter>
-        <Routes>
-
-        {!isAuthenticated && (
-          <>
-            <Route path="/Cadastro" element={<Cadastro />} />
-            <Route path="/login" element={<Login />} />
-          </>
-        )}
-
-        {isAuthenticated && (
-          <>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/descricao/:id" element={<Descricao />} />
-          </>
-        )}
-
-          <Route path="*" element={isAuthenticated ? <Home /> : <Login />}/>
-        </Routes>
-      </BrowserRouter>
+      <GlobalStyle/>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </>
   )
 }
