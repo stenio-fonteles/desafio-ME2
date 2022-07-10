@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FC, createContext, useState } from "react";
+import {createContext, useEffect, useState } from "react";
 
 
 type TDoLoginParams = {
@@ -33,8 +33,22 @@ export const AuthProvider = ({ children }: any) => {
     setIsAuthenticated(true)
     setUserData(data)
 
+    localStorage.setItem("auth", JSON.stringify(data))
     return true
   }
+
+  useEffect(() => {
+    const auth = localStorage.getItem("auth")
+    if (!auth) {
+      setIsAuthenticated(false)
+      setUserData({} as TUserData)
+      return
+    }
+
+    const authObject = JSON.parse(auth)
+    setIsAuthenticated(true)
+    setUserData(authObject)
+  }, [])
 
   return (
     <AuthContext.Provider value={{doLogin, isAuthenticated, userData}}>

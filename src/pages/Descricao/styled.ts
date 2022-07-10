@@ -4,9 +4,7 @@ type TPropsWallpaper = {
 
 }
 
-type TClick = {
-  active: boolean
-}
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;

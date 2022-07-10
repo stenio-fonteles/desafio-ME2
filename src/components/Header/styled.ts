@@ -32,15 +32,20 @@ export const Ul = styled.ul `
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 5%;
     align-items:center;
     li{
-        text-decoration: none;
         list-style-type: none;
         img{
             height: auto;
-            width: 100%;
+            width: 20%;
+            @media (max-width:762px ) {
+                    width: 30%;
+            }
+            @media (max-width:555px ) {
+                    width: 40%;
+            }
         }
     }
 

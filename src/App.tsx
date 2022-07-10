@@ -12,11 +12,11 @@ import Home from "./pages/Home";
 import { AuthProvider } from "./contexts/AuthContext";
 import Descricao from "./pages/Descricao";
 import { GlobalStyle } from "./styled";
-
-
+import { useAuth } from "./hooks/useAth";
 
 
 function App() {
+  const { isAuthenticated } = useAuth()
   createServer({
     models: {
       users: Model
@@ -66,6 +66,14 @@ function App() {
         const user = users.attrs       
         return user
       })
+
+      this.delete("/users/:id", (schema, request) => {
+        const {id} = request.params
+
+        schema.find("users", id)?.destroy()
+
+        return true
+      })
     },
     seeds(server) {
       server.db.loadData({
@@ -78,18 +86,29 @@ function App() {
     
   })
   return (
-    
-    <AuthProvider>
-      <GlobalStyle/>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/Cadastro" element={<Cadastro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/descricao/:id" element={<Descricao />} />
-      </Routes>
-    </BrowserRouter>
-    </AuthProvider>
+    <>
+        <GlobalStyle/>
+        <BrowserRouter>
+        <Routes>
+
+        {!isAuthenticated && (
+          <>
+            <Route path="/Cadastro" element={<Cadastro />} />
+            <Route path="/login" element={<Login />} />
+          </>
+        )}
+
+        {isAuthenticated && (
+          <>
+            <Route path="/Home" element={<Home />} />
+            <Route path="/descricao/:id" element={<Descricao />} />
+          </>
+        )}
+
+          <Route path="*" element={isAuthenticated ? <Home /> : <Login />}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

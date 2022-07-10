@@ -1,4 +1,7 @@
 import styled, { keyframes } from "styled-components"
+type TClick = {
+    active:Boolean
+}
 
 export const Container = styled.div`
     padding-bottom:20px ;
@@ -15,9 +18,6 @@ export const Title = styled.h3`
     margin-bottom: 5%;
 `
 
-type TClick = {
-    active:Boolean
-}
 export const DescriptionText = styled.p <TClick>`
     display: ${props => props.active ? "block" : "none"};
     background-color: black;

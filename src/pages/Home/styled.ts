@@ -30,38 +30,31 @@ export const Paragrafo = styled.p `
     font-size: 2.5rem;
     width: 50%;
     background-color:white ;
-    color: black;
+    font-weight: bold;
+    color: white;
     text-align: left;
     position: absolute;
-    top: 50%;
-    left: 15%;
+    top: 80%;
+    left: 5%;
     padding: 10px;
     box-shadow: 0px 0px 50px 50px rgba(0, 0, 0, 0.2);
-    @media (max-width: 728px) {
-      left: 0;
-      top:70%;
-      width: 100%;
-     font-size: 2.0rem;
+   background-color: transparent;
+    @media (max-width: 1002px) {
      display: none;
     }
 `
 export const H1 = styled.h1 `
+font-weight: bolder;
     font-size: 2.5rem;
     width: 50%;
     color: #B22222;
-    z-index: 99;
+ 
     text-align: left;
     position: absolute;
-    top: 44%;
-    left: 15%;
+    top: 74%;
+    left: 5%;
     padding: 10px;
-    @media (max-width: 728px) {
-      background-color: black;
-      border-radius: 2%;
-      left: 5%;
-      top:65%;
-      width: 100%;
-     font-size: 2.0rem;
+    @media (max-width: 1002px) {
      display: none;
     }
 
