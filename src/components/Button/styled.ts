@@ -8,8 +8,11 @@ export const Button = styled.button`
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 2%;
+    border-radius: 5%;
+    @media (max-width: 728px) {
+      width: 100%;
+      height: auto;
+    }
 `;

@@ -25,7 +25,7 @@ export default function Card({image, nome, potencia, valor,id }:TDataUser){
                 <Img src={image}/>
                 <Div>
                     <H3>{nome}</H3>
-                    <Button value={"comprar"} key={id} click={teste}/>
+                    <Button value={"Detalhes"} key={id} click={teste}/>
                 </Div>
                 <Div>
                     <P>{potencia} cv</P>

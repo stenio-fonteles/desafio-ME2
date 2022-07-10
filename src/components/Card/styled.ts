@@ -30,17 +30,23 @@ export const H3 = styled.h3 `
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     margin-top: 5px;
+    @media (max-width: 728px) {
+      display: none;
+    }
 
 `
 export const Div = styled.div `
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
 
 `
 export const P = styled.p `
 margin: 5%;
     font-size: 2rem;
-
+    @media (max-width: 728px) {
+      display: none;
+    }
 `
 

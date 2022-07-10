@@ -1,6 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { keyframes, css} from "styled-components";
-import Popup from 'reactjs-popup';
 type TPropsWallpaper = {
   url: string,
 
@@ -21,8 +19,10 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Div = styled.div `
   height: auto;
+  min-height: 150vh;
   width: 100%;
   background-color: black;
+
  
   `
 export const Wallpaper = styled.div<TPropsWallpaper> `
@@ -40,7 +40,7 @@ export const Wallpaper = styled.div<TPropsWallpaper> `
 export const P = styled.p`
   font-size: 5rem;
   color: red;
-  
+ 
   `
 
 export const Caixa = styled.div `
@@ -66,17 +66,26 @@ h1{
   font-size: 2rem;
   margin-top: 5%;
 }
-ul{
+
+ li{
+  font-size: 1.5rem;
+  list-style: none;
+ }
+
+`
+
+export const Ul = styled.ul `
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 3%;
   animation: teste 2s infinite ;
- li{
-  font-size: 1.5rem;
-  list-style: none;
- }
-}
+  text-align: center;
+  @media (max-width: 728px) {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    }
 `
 
 

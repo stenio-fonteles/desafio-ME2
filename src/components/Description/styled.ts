@@ -2,6 +2,10 @@ import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
     padding-bottom:20px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
 `
 
 export const Title = styled.h3`
@@ -23,9 +27,11 @@ export const DescriptionText = styled.p <TClick>`
     animation-duration: 2s;
     animation-iteration-count: unset;
     word-break: break-all;
-    text-align: left;
+
     color: white;
     overflow: hidden;   
+    text-align: center;
+  
     //white-space: nowrap;
     word-break: break-all;
     cursor: pointer;
