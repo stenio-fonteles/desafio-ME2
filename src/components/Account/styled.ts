@@ -45,3 +45,8 @@ export const Button = styled.button `
 export const Content = styled.div `
     color: white;
 `
+
+export const Grid = styled.div `
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+`

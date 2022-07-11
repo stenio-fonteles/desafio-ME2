@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { Me2Api } from "../../apis/ME2";
 
 import Description from "../../components/Description";
 
@@ -21,11 +22,12 @@ export default function Descricao(this: any) {
     const [objData, setObjData] = useState<Tdata>({} as Tdata)
     const {userData} = useAuth()
     const {id} = useParams()
-    const [active, setActive] = useState(false)
+    
+    const navigate = useNavigate()
     
    
-    async function getBackground() {
-        const {data} = await axios.get<Tdata[]>("/api/motorcycles");
+    async function getBackground(): Promise<void> {
+        const {data} = await Me2Api.get<Tdata[]>("/motorcycles");
         const chosseMotorcycle =  data.find((motorcycle) => motorcycle.id == Number(id))
         if(!chosseMotorcycle) return;
         setObjData(chosseMotorcycle)
@@ -37,12 +39,12 @@ export default function Descricao(this: any) {
     }, [])
 
 
-    function handleBuy() {
-        console.log('comprei')
+    function handleFavorite() {
+        navigate("/compra")
     }
-    const arrTets = [{key: 1,motor:'motor', text:'Com desempenho esportivo e empolgante, o icônico motor tetra cilíndrico DOHC de 16 válvulas com 649 cm3 tem excelente entrega de potência em todas as faixas rotações. Sua potência máxima de 88,4 cvà 11.500 rpm e torque de 6,13 kgm.fa 8.000 rpm garantem alta performance ao pilotar, além do icônico som dos quatro cilindros Honda.'},
-    {key: 2, motos:'motor', text:'Com desempenho esportivo e empolgante, o icônico motor tetra cilíndrico DOHC de 16 válvulas com 649 cm3 tem excelente entrega de potência em todas as faixas rotações. Sua potência máxima de 88,4 cvà 11.500 rpm e torque de 6,13 kgm.fa 8.000 rpm garantem alta performance ao pilotar, além do icônico som dos quatro cilindros Honda.'}]
+
     
+  
         return (
             <Div>
                 <GlobalStyle/>
@@ -62,7 +64,7 @@ export default function Descricao(this: any) {
                         <Description content={'A CBR 650R possui suspensão invertida do tipo SeparateFunctionFront Fork(SFF) e amortecedor com estrutura Big PistonFront Fork(BPF), conjunto este que reduz o peso não-suspenso da motocicleta. Além de firmeza e respostas mais precisas, você tem mais estabilidade durante a pilotagem.'} title={'SUSPENSÃO INVERTIDA'}/>
                     </Ul>
                 </Container>
-                    <ButtonBuy> Obter</ButtonBuy>
+                    <ButtonBuy onClick={handleFavorite}> Obter</ButtonBuy>
 
             </Div>
         )

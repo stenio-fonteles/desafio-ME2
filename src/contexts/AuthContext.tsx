@@ -1,5 +1,6 @@
 import axios from "axios";
 import {createContext, useEffect, useState } from "react";
+import { Me2Api } from "../apis/ME2";
 
 
 type TDoLoginParams = {
@@ -24,12 +25,8 @@ export const AuthProvider = ({ children }: any) => {
   const [userData, setUserData] = useState({} as TUserData);
 
   async function doLogin({email, password}: TDoLoginParams) {
-    const {data} = await axios.post('/api/auth', {
-      email,
-      password
-    })
-
-    if(data.status === 401) return false;
+    const {data} = await Me2Api.get(`/users?email=${email}&password=${password}`)
+    if(!data) return false;
 
     setIsAuthenticated(true)
     setUserData(data)

@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { Div,Container } from './styled'
 import { useNavigate } from "react-router-dom";
+import { Me2Api } from "../../apis/ME2";
 
 type TDataUser = {
     name: string,
@@ -23,7 +24,7 @@ export default function Cadastro() {
     async function handleSubmit ()
     {
         if(name == '' ) return;
-        await axios.post('/api/users', {name, email, password} )
+        await Me2Api.post('/users', {name, email, password} )
     }
 
     useEffect(() => console.log(dataUser), [dataUser])

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useAuth } from '../../hooks/useAth';
 import Input from '../Form/Input';
-import {Div,Container,Button,Content} from './styled'
+import {Div,Container,Button,Content,Grid} from './styled'
 
 type TData = {
     id: string
@@ -40,6 +40,10 @@ export default function UserAccount({nome, id}:TData) {
                         <button onClick={handleDeleteAccount}> Editar</button>
                         <button onClick={handleDeslogarAccount}> Deslogar</button>
                         <Input value='name'  set={setNewUser}/>
+                        <Grid>
+                            <h1>iai</h1>
+                            <h1>iai</h1>
+                        </Grid>
                     </Content>
                 </Div>
 

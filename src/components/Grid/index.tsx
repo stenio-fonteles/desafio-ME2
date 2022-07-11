@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Me2Api } from '../../apis/ME2';
 
 import Card from '../Card'
 import { Template, GlobalStyle} from './styled'
@@ -16,7 +16,8 @@ export default function Grid () {
     const [motorcycle, setMotorcycles] = useState<TData[]>([])
     
     async function getMotorcycles() {
-        const {data} = await axios.get("/api/motorcycles");
+        const {data} = await Me2Api.get("/motorcycles");
+        console.log(data)
         setMotorcycles(data)
     }
 
