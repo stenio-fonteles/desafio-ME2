@@ -29,7 +29,7 @@
 </p>
 
 <p>rode yarn dev para startar o projeto no navegador;</p>
-<p>  Caso opte por npm, rode = npm run dev --port 3001 --watch db.json = para iniciar o json server; </p>
+<p>  Caso opte por npm, rode = npx json-server --port 3001 --watch db.json = para iniciar o json server; </p>
 <p> rode npm run dev para startar o projeto no navegador; </p>
 
 <h4> Logue com acesso padrão ( email: admin, senha: admin ) caso opte por se cadastrar;</h4>
