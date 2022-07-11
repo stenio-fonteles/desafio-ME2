@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-styled.input`
-   
-`;
+export const TextField = styled.input`
+   label{
+    color: red;
+   }
+`

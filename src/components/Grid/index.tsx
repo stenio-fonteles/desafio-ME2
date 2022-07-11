@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Me2Api } from '../../apis/ME2';
+import { Me2Api } from '../../apis/Me2';
 
 import Card from '../Card'
 import { Template, GlobalStyle} from './styled'

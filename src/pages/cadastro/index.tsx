@@ -1,10 +1,9 @@
 import Button from "../../components/Button/index";
 import Input from "../../components/Form/Input";
 import { useEffect,useState } from "react";
-import axios from "axios";
 import { Div,Container } from './styled'
 import { useNavigate } from "react-router-dom";
-import { Me2Api } from "../../apis/ME2";
+import { Me2Api } from "../../apis/Me2";
 
 type TDataUser = {
     name: string,

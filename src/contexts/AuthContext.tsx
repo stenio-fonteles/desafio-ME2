@@ -1,6 +1,6 @@
 import axios from "axios";
 import {createContext, useEffect, useState } from "react";
-import { Me2Api } from "../apis/ME2";
+import { Me2Api } from "../apis/Me2";
 
 
 type TDoLoginParams = {

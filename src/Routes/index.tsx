@@ -23,7 +23,7 @@ export const Routes = () => {
                     <>
                         <Route path="/Home" element={<Home />} />
                         <Route path="/descricao/:id" element={<Descricao />} />
-                        <Route path="/compra" element={<Compra />} />
+                        <Route path="/compra/:id" element={<Compra />} />
                     </>
                 )}
 

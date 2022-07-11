@@ -1,13 +1,9 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
-import { Me2Api } from "../../apis/ME2";
-
+import { Me2Api } from "../../apis/Me2";
 import Description from "../../components/Description";
-
 import Header from "../../components/Header";
 import { useAuth } from "../../hooks/useAth";
-
 import {  Wallpaper,Div, GlobalStyle,P,Caixa, Container,Ul, ButtonBuy} from "./styled";
 
 type Tdata ={
@@ -40,7 +36,7 @@ export default function Descricao(this: any) {
 
 
     function handleFavorite() {
-        navigate("/compra")
+        navigate(`/compra/${id}`)
     }
 
     
