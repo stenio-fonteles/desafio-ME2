@@ -18,7 +18,7 @@ export const Template = styled.div `
     transition: all 500ms ease;
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    overflow-x: scroll;
     transform: translateX(-0%);
     @media (max-width: 728px) {
       height: 100%;

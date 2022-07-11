@@ -26,12 +26,16 @@ export const AuthProvider = ({ children }: any) => {
 
   async function doLogin({email, password}: TDoLoginParams) {
     const {data} = await Me2Api.get(`/users?email=${email}&password=${password}`)
-    if(!data) return false;
+    if(data.length === 0) {
+      setIsAuthenticated(false)
+      return false 
+    };
 
+    const [user] = data;
     setIsAuthenticated(true)
-    setUserData(data)
-
-    localStorage.setItem("auth", JSON.stringify(data))
+    setUserData(user)
+    
+    localStorage.setItem("auth", JSON.stringify(user))
     return true
   }
 

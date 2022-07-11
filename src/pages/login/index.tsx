@@ -16,16 +16,16 @@ export default function Login () {
     // criando dashboard no grafana com metricas do zabbix
     const navigator = useNavigate();
     const { doLogin } = useAuth();
+    const [notAutorized , setNotAutorized] = useState('')
     
     async function handleSubmit(_event: FormEvent) {
-  
       const response = await doLogin({
         email,
         password
       });
-  
-      if(!response) return console.log("not authorized")
-  
+      
+      
+      if(!response) return setNotAutorized("Conta nao localizada")
       return navigator("/Home")
     }
  
@@ -38,6 +38,7 @@ export default function Login () {
 
             <Div>
                 <Container>
+                    <h1>{notAutorized}</h1>
                     <h1>Login</h1>
                     <Input value={"Nome::"} set={setEmail}/>
                     <Input value={"Senha:"} set={setPassword} />

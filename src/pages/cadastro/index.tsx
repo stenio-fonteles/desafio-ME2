@@ -26,7 +26,7 @@ export default function Cadastro() {
         await Me2Api.post('/users', {name, email, password} )
     }
 
-    useEffect(() => console.log(dataUser), [dataUser])
+    
     function handleNavegate () {
         navigate("/login")
     }

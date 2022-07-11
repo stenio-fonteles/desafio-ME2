@@ -77,19 +77,13 @@
       "email": "stenio",
       "password": "stenio",
       "id": 2
+    },
+    {
+      "name": "teste",
+      "email": "teste",
+      "password": "teste",
+      "id": 3
     }
   ],
-  "sales": [
-    {
-      "motorcycleId": "6",
-      "address": {
-        "logradouro": "Rua Doutor Epitácio Cruz",
-        "localidade": "Fortaleza",
-        "bairro": "Lagoa Redonda",
-        "estado": "CE",
-        "numero": "85544"
-      },
-      "id": 1
-    }
-  ]
+  "sales": []
 }

@@ -9,7 +9,8 @@ import { Div, Form } from "./styled";
 
 type TData ={
     nome: string,
-    valor:number
+    valor:number,
+    url:string
 }
 export default function Compra() {
     const [cep, setCep] = useState('')
@@ -33,14 +34,17 @@ export default function Compra() {
 
     async function motocycleChooser() {
         const {data} = await Me2Api(`/motorcycles/${id}`)
-        setmoto({nome: data.nome, valor: data.valor})
+        setmoto({nome: data.nome, valor: data.valor, url: data.url })
     }
-
+    console.log(moto.url)
     function handleBuyMotor(e: any) {
         e.preventDefault();
         Me2Api.post('/sales', { 
             userId: userData.id,
             motorcycleId: id,
+            url:moto.url,
+            nome:moto.nome,
+            valor:moto.valor,
             address: {
                 logradouro,
                 localidade,
