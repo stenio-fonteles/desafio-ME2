@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonForm from "../../components/Button";
 import Input from "../../components/Form/Input";
-import { Div,Container } from './styled'
+import { Div,Container,TitleLogin } from './styled'
 import { FormEvent } from 'react';
 import { useAuth } from '../../hooks/useAth';
 type TDataLogin = {
@@ -33,13 +33,11 @@ export default function Login () {
     function handleNavegate(){
         navigator("/cadastro");
     }
-
     return (
-
             <Div>
                 <Container>
                     <h1>{notAutorized}</h1>
-                    <h1>Login</h1>
+                    <TitleLogin>Login</TitleLogin>
                     <Input value={"Nome::"} set={setEmail}/>
                     <Input value={"Senha:"} set={setPassword} />
 

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ButtonForm from "../Button";
-import { GlobalStyle,H1, Div,Ul} from "./styled";
+import { GlobalStyle, Div,Ul} from "./styled";
 import UserAccount from '../Account/index'
 import { useAuth } from "../../hooks/useAth";
 

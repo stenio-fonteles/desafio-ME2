@@ -68,7 +68,7 @@
   "users": [
     {
       "id": 1,
-      "name": "admin",
+      "name": "",
       "email": "admin",
       "password": "admin"
     },
@@ -85,5 +85,21 @@
       "id": 3
     }
   ],
-  "sales": []
+  "sales": [
+    {
+      "userId": 1,
+      "motorcycleId": "5",
+      "url": "https://www.papeldeparede.etc.br/fotos/wp-content/uploads/moto-ktm-race_3799_1024x768.jpg",
+      "nome": "CB 650R",
+      "valor": 48.44,
+      "address": {
+        "logradouro": "Rua Monsenhor Salazar",
+        "localidade": "Fortaleza",
+        "bairro": "Tauape",
+        "estado": "CE",
+        "numero": ""
+      },
+      "id": 1
+    }
+  ]
 }

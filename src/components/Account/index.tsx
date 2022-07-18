@@ -57,7 +57,7 @@ export default function UserAccount({nome, id}:TData) {
     useEffect(() => {salesMotorcycle()}, [])
     return(
         <Container>
-                <AccountCircleIcon onClick={handleShowAccount}/>
+                <AccountCircleIcon onClick={handleShowAccount} />
                 <Div active={active}>
                     <Button onClick={handleShowAccount}> X </Button>
                     <Content>

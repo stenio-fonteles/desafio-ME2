@@ -38,6 +38,7 @@ export default function Compra() {
     }
     console.log(moto.url)
     function handleBuyMotor(e: any) {
+        if (cep == '') return  
         e.preventDefault();
         Me2Api.post('/sales', { 
             userId: userData.id,

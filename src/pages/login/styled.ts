@@ -14,6 +14,10 @@ export const Div = styled.div`
 
 `;
 
+export const TitleLogin = styled.h1 `
+    font-size: 1.4rem
+`
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
